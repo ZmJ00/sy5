@@ -10,15 +10,20 @@ class CJournal
     public:
         CJournal(std::string name,std::string pub,double price)
         :Name(name),Publisher(pub),Price(price){}
-        void Print();
-        void setname(std::string name){Name=name;}
+        /*
+        void Print(); //负责打印Name和Publisher
+        void setname(std::string name){Name=name;} //负责修改Name
+        */
+
+       std::string &name(){return Name;}
+       std::string &publisher(){return Publisher;}
 };   
 
 class CSciJournal:public CJournal
 {
     private:
         double Factor;
-        static int Number; //检索杂志个数
+        static int Number; //检索杂志个数，静态变量
     public:
         CSciJournal(std::string name,std::string pub,double price,double fac)
         :CJournal(name,pub,price),Factor(fac){Number++;}
