@@ -11,10 +11,12 @@ class CJournal
         CJournal(std::string name,std::string pub,double price)
         :Name(name),Publisher(pub),Price(price){}
         /*
+        // 调用函数的方法
         void Print(); //负责打印Name和Publisher
         void setname(std::string name){Name=name;} //负责修改Name
         */
 
+        //返回引用的方法
        std::string &name(){return Name;}
        std::string &publisher(){return Publisher;}
 };   
